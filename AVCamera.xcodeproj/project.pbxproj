@@ -14,6 +14,7 @@
 		D498C5C21CA6BF0A0011E4EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D498C5C01CA6BF0A0011E4EE /* LaunchScreen.storyboard */; };
 		D498C5CD1CA6BF0B0011E4EE /* AVCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498C5CC1CA6BF0B0011E4EE /* AVCameraTests.swift */; };
 		D498C5D81CA6BF0B0011E4EE /* AVCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498C5D71CA6BF0B0011E4EE /* AVCameraUITests.swift */; };
+		D498C5E61CA6C0580011E4EE /* ImageReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498C5E51CA6C0580011E4EE /* ImageReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D498C5D31CA6BF0B0011E4EE /* AVCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D498C5D71CA6BF0B0011E4EE /* AVCameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCameraUITests.swift; sourceTree = "<group>"; };
 		D498C5D91CA6BF0B0011E4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D498C5E51CA6C0580011E4EE /* ImageReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D498C5B71CA6BF0A0011E4EE /* AppDelegate.swift */,
 				D498C5B91CA6BF0A0011E4EE /* ViewController.swift */,
+				D498C5E51CA6C0580011E4EE /* ImageReviewViewController.swift */,
 				D498C5BB1CA6BF0A0011E4EE /* Main.storyboard */,
 				D498C5BE1CA6BF0A0011E4EE /* Assets.xcassets */,
 				D498C5C01CA6BF0A0011E4EE /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D498C5E61CA6C0580011E4EE /* ImageReviewViewController.swift in Sources */,
 				D498C5BA1CA6BF0A0011E4EE /* ViewController.swift in Sources */,
 				D498C5B81CA6BF0A0011E4EE /* AppDelegate.swift in Sources */,
 			);
@@ -402,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";

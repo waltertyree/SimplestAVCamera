@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +17,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYz-kL-e24">
+                                <rect key="frame" x="258" y="562" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="G4V-lR-zJc"/>
+                                    <constraint firstAttribute="height" constant="30" id="VdI-Vh-iOH"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="captureCheckImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="btb-4I-kSK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eYz-kL-e24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7vV-4k-UHj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eYz-kL-e24" secondAttribute="bottom" constant="8" id="Piv-Cz-dyt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="eYz-kL-e24" id="O9J-D5-rDt"/>
+                        <segue destination="TpS-96-FVI" kind="popoverPresentation" identifier="showResult" popoverAnchorView="eYz-kL-e24" id="ZUl-zt-bgI">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="7fi-sa-jKb" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+        </scene>
+        <!--Image Review View Controller-->
+        <scene sceneID="6sN-Fw-JRc">
+            <objects>
+                <viewController id="TpS-96-FVI" customClass="ImageReviewViewController" customModule="AVCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0wW-Ce-rtd"/>
+                        <viewControllerLayoutGuide type="bottom" id="un9-3e-nyY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d5V-3I-sg9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-Zh-swZ">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mid-Cz-9B1">
+                                <rect key="frame" x="43" y="39" width="46" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="7fi-sa-jKb" kind="unwind" unwindAction="unwindToCamera:" id="GKw-bf-ajL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="un9-3e-nyY" firstAttribute="top" secondItem="6Xm-Zh-swZ" secondAttribute="bottom" id="BDv-o9-1E7"/>
+                            <constraint firstItem="6Xm-Zh-swZ" firstAttribute="leading" secondItem="d5V-3I-sg9" secondAttribute="leadingMargin" id="Cxj-RI-wqZ"/>
+                            <constraint firstItem="6Xm-Zh-swZ" firstAttribute="top" secondItem="0wW-Ce-rtd" secondAttribute="bottom" id="akd-F2-GfA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Xm-Zh-swZ" secondAttribute="trailing" id="kfH-qM-v34"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finalImage" destination="6Xm-Zh-swZ" id="3RV-71-JyX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYA-dp-Vzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
