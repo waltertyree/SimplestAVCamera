@@ -131,7 +131,7 @@ class ViewController: UIViewController {
                         
                         var payloadImage = CIImage(data: imageData)!
                         //      CISepiaTone                  CIBloom
-                        let sepia = CIFilter(name: "CIBloom")
+                        let sepia = CIFilter(name: "CISepiaTone")
                                                             sepia?.setValue(payloadImage, forKey: "inputImage")
                             payloadImage = sepia!.outputImage!
                         
