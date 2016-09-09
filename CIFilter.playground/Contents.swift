@@ -25,4 +25,4 @@ let filter2 = CIFilter(name: "CIPixellate")!
 filter2.setValue(monoKitty, forKey: kCIInputImageKey)
 filter2.setValue(NSNumber(integer:25), forKey: kCIInputScaleKey)
 
-let histogramPic = filter2.outputImage!
+let chunkyCat = filter2.outputImage!
