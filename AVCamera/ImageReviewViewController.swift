@@ -26,6 +26,7 @@ class ImageReviewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.finalImage.image = self.imageSource
+               self.finalImage.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
     }
 
     /*

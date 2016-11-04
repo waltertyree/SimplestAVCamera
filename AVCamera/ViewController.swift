@@ -30,6 +30,10 @@ class ViewController: UIViewController {
                 device?.focusMode = AVCaptureFocusMode.continuousAutoFocus
             }
             
+            if (device?.isLowLightBoostSupported)! {
+                device?.automaticallyEnablesLowLightBoostWhenAvailable = true
+            }
+            
             if (device?.hasFlash)! && (device?.isFlashAvailable)! {
                 device?.flashMode = .auto
             }
@@ -78,7 +82,7 @@ class ViewController: UIViewController {
                         self.view.bringSubview(toFront: self.captureButton)
             
             
-            //       previewView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+            
         }
     
     captureSession?.startRunning()
