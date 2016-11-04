@@ -196,13 +196,17 @@
 				TargetAttributes = {
 					D498C5B31CA6BF0A0011E4EE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = K75NL9T9H7;
+						LastSwiftMigration = 0810;
 					};
 					D498C5C71CA6BF0B0011E4EE = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = D498C5B31CA6BF0A0011E4EE;
 					};
 					D498C5D21CA6BF0B0011E4EE = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = D498C5B31CA6BF0A0011E4EE;
 					};
 				};
@@ -405,11 +409,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K75NL9T9H7;
 				INFOPLIST_FILE = AVCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -417,11 +424,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K75NL9T9H7;
 				INFOPLIST_FILE = AVCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -433,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCameraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVCamera.app/AVCamera";
 			};
 			name = Debug;
@@ -445,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCameraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVCamera.app/AVCamera";
 			};
 			name = Release;
@@ -456,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCameraUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AVCamera;
 			};
 			name = Debug;
@@ -467,6 +480,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyreeapps.AVCameraUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AVCamera;
 			};
 			name = Release;
@@ -490,6 +504,7 @@
 				D498C5DE1CA6BF0B0011E4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D498C5DF1CA6BF0B0011E4EE /* Build configuration list for PBXNativeTarget "AVCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +513,7 @@
 				D498C5E11CA6BF0B0011E4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D498C5E21CA6BF0B0011E4EE /* Build configuration list for PBXNativeTarget "AVCameraUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +522,7 @@
 				D498C5E41CA6BF0B0011E4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

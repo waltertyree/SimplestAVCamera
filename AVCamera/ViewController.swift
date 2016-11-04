@@ -22,32 +22,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         do {
-            try device.lockForConfiguration()
+            try device?.lockForConfiguration()
             
-            if device.isFocusModeSupported(.ContinuousAutoFocus) {
-                device.focusMode = AVCaptureFocusMode.ContinuousAutoFocus
+            if (device?.isFocusModeSupported(.continuousAutoFocus))! {
+                device?.focusMode = AVCaptureFocusMode.continuousAutoFocus
             }
             
-            if device.hasFlash && device.flashAvailable {
-                device.flashMode = .Auto
+            if (device?.hasFlash)! && (device?.isFlashAvailable)! {
+                device?.flashMode = .auto
             }
             
-            if device.isExposureModeSupported(.ContinuousAutoExposure) {
-                device.exposureMode = .ContinuousAutoExposure
+            if (device?.isExposureModeSupported(.continuousAutoExposure))! {
+                device?.exposureMode = .continuousAutoExposure
             } else {
-                device.exposureMode = .AutoExpose
+                device?.exposureMode = .autoExpose
             }
             
-            if device.isWhiteBalanceModeSupported(.ContinuousAutoWhiteBalance) {
-                device.whiteBalanceMode = .ContinuousAutoWhiteBalance
+            if (device?.isWhiteBalanceModeSupported(.continuousAutoWhiteBalance))! {
+                device?.whiteBalanceMode = .continuousAutoWhiteBalance
             } else {
-                device.whiteBalanceMode = .AutoWhiteBalance
+                device?.whiteBalanceMode = .autoWhiteBalance
             }
             
             // device.activeVideoMinFrameDuration = CMTimeMake(1, 8)
-            device.unlockForConfiguration()
+            device?.unlockForConfiguration()
         } catch let error as NSError {
             print("There was an error changing the framerate \(error.localizedDescription)")
         }
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 
             
             self.view.layer.addSublayer(self.previewLayer!)
-                        self.view.bringSubviewToFront(self.captureButton)
+                        self.view.bringSubview(toFront: self.captureButton)
             
             
             //       previewView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         photograph.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
         if let capture = self.captureSession {
@@ -106,26 +106,26 @@ class ViewController: UIViewController {
             }
         }
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResult" {
-            if let vc = segue.destinationViewController as? ImageReviewViewController {
+            if let vc = segue.destination as? ImageReviewViewController {
                 vc.imageSource = sender as? UIImage
             }
         }
     }
-    @IBAction func unwindToCamera(sender: UIStoryboardSegue)
+    @IBAction func unwindToCamera(_ sender: UIStoryboardSegue)
     {
-        self.captureButton.enabled = true
+        self.captureButton.isEnabled = true
     }
     
-    @IBAction func captureCheckImage(sender:UIButton?) {
+    @IBAction func captureCheckImage(_ sender:UIButton?) {
         if let button = sender {
-            button.enabled = false
+            button.isEnabled = false
         }
-        let connection = photograph.connectionWithMediaType(AVMediaTypeVideo)
+        let connection = photograph.connection(withMediaType: AVMediaTypeVideo)
         if connection != nil {
-            photograph.captureStillImageAsynchronouslyFromConnection(connection, completionHandler: { (imageDataBuffer, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            photograph.captureStillImageAsynchronously(from: connection, completionHandler: { (imageDataBuffer, error) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     if let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataBuffer) {
                         
                         
@@ -137,11 +137,11 @@ class ViewController: UIViewController {
                         
                         
                         let context = CIContext(options:[kCIContextUseSoftwareRenderer : true])
-                        let cgImage = context.createCGImage(payloadImage, fromRect: payloadImage.extent)
+                        let cgImage = context.createCGImage(payloadImage, from: payloadImage.extent)
                       
-                        let convertedImage = UIImage(CGImage: cgImage)
+                        let convertedImage = UIImage(cgImage: cgImage!)
                         
-                        self.performSegueWithIdentifier("showResult", sender: convertedImage)
+                        self.performSegue(withIdentifier: "showResult", sender: convertedImage)
 
                         
                     }
