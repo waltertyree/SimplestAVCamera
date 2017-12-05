@@ -14,15 +14,17 @@ Set the parameters for the filter you chose, here. Remember that for most filter
 */
 
 filter.setValue(pic, forKey: kCIInputImageKey)
-let inputColor = CIColor(color: UIColor.yellowColor())
+let inputColor = CIColor(color: UIColor.yellow)
 filter.setValue(inputColor, forKey: kCIInputColorKey)
 /*:
 If you want to pass the image through multiple filters just you the filter.outputImage as the value for the kCIInputImageKey of the next filter you create.
 */
 let monoKitty = filter.outputImage!
-
-let filter2 = CIFilter(name: "CIPixellate")!
+//CIPhotoEffectNoir
+//CITwirlDistortion
+//CIDiscBlur - takes a long time
+let filter2 = CIFilter(name: "CIMotionBlur")!
 filter2.setValue(monoKitty, forKey: kCIInputImageKey)
-filter2.setValue(NSNumber(integer:25), forKey: kCIInputScaleKey)
 
-let histogramPic = filter.outputImage!
+
+let histogramPic = filter2.outputImage!

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AVCamera
 //
-//  Created by Walter Tyree on 3/26/16.
+//  Created by Walter Tyree on a warm, Spring day.
 //  Copyright © 2016 Tyree Apps, LLC. All rights reserved.
 //
 

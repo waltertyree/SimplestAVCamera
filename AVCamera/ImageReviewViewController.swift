@@ -2,7 +2,7 @@
 //  ImageReviewViewController.swift
 //  AVCamera
 //
-//  Created by Walter Tyree on 3/26/16.
+//  Created by Walter Tyree on a warm, Spring day.
 //  Copyright © 2016 Tyree Apps, LLC. All rights reserved.
 //
 
@@ -26,7 +26,7 @@ class ImageReviewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.finalImage.image = self.imageSource
-               self.finalImage.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+               self.finalImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
     }
 
     /*
