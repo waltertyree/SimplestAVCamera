@@ -27,4 +27,4 @@ let filter2 = CIFilter(name: "CIMotionBlur")!
 filter2.setValue(monoKitty, forKey: kCIInputImageKey)
 
 
-let histogramPic = filter2.outputImage!
+let chunkyCat = filter2.outputImage!
